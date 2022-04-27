@@ -6,7 +6,7 @@ import generateToken from "../utils/generateToken.js";
 
 const UserRoutes = express.Router();
 
-//LOGIN
+//iniciar sesion
 UserRoutes.post(
     "/login", 
     asyncHandler(async(req,res) => {
