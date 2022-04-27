@@ -32,7 +32,7 @@ UserRoutes.post(
  //perfil
  UserRoutes.get(
     "/profile", 
-    protect,
+  protect,
     asyncHandler(async(req,res) => {
        res.send("user profile")
     })
