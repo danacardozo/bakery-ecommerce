@@ -27,6 +27,7 @@ if (orderItems && orderItems.length === 0){
 } else {
     const order = new Order({
              orderItems, 
+             user:req.user._id,
              shippingAddress,
              paymentMethod, 
              itemsPrice, 

@@ -86,7 +86,7 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-//detalles de usuarii
+//detalles de usuario
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
