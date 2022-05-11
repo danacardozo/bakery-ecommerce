@@ -1,6 +1,7 @@
 import express from "express";
 import asyncHandler from "express-async-handler";
 import Product from "../Models/ProductModel.js";
+import protect from "../Middleware/AuthMiddleware.js";
 
 const ProductRoutes = express.Router();
 
@@ -29,23 +30,24 @@ ProductRoutes.get(
 //opiniones de producto 
 ProductRoutes.post(
     "/:id/review",
+    protect,
      asyncHandler(async(req,res)=>{
-         const {rating, comment} = req.body
+         const {rating, comment} = req.body;
         const product = await Product.findById(req.params.id);
 
         if(product){
             const alreadyReviewed = product.reviews.find(
                 (r) => r.user.toString() === req.user._id.toString()
-            )
+            );
             if (alreadyReviewed) {
                 res.status(400);
                 throw new Error("Product already Reviewed");
             }
             const review = {
-                name:req.user.name,
-                rating:Number(rating),
+                name: req.user.name,
+                rating: Number(rating),
                 comment,
-                user:req.user._id,
+                user: req.user._id,
             };
 
             product.reviews.push(review)
