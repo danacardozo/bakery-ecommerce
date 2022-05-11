@@ -5,6 +5,7 @@ import { getUserDetails } from "../Redux/Actions/userActions";
 import moment from "moment";
 import Orders from "./../components/profileComponents/Orders";
 import { useDispatch, useSelector } from "react-redux";
+import { listMyOrders } from "../Redux/Actions/OrderActions";
 
 
 const ProfileScreen = () => {
@@ -17,7 +18,7 @@ const ProfileScreen = () => {
   const { orders, loading, error} = orderListMy;
 
   useEffect(() => {
-    
+    dispatch(listMyOrders());
     dispatch(getUserDetails("profile"));
   }, [dispatch]);
 

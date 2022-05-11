@@ -41,7 +41,19 @@ if (orderItems && orderItems.length === 0){
     }
     })
  );
- 
+  
+ //pedidos de usuario logueado
+orderRouter.get(
+    "/", 
+    protect,
+    asyncHandler(async(req,res) => {
+        const order = await Order.find({user: req.user_.id}).sort({_id: -1});
+
+   res.json(order);
+    })
+ );
+
+
  //obtener pedido por id
 orderRouter.get(
     "/:id", 
