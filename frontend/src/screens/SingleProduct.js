@@ -8,7 +8,8 @@ import {listProductDetails } from "../Redux/Actions/ProductActions";
 import Loading from "../components/LoadingError/Loading";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../Redux/Constants/ProductConstants";
 import moment from "moment";
-import Loading from "../components/LoadingError/Loading";
+import { createProductReview } from "../Redux/Actions/ProductActions";
+{/*import Loading from "../components/LoadingError/Loading";*/}
 
 
 const SingleProduct = ({ history, match }) => {  
