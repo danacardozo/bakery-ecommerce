@@ -8,15 +8,15 @@ import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
 
 const ShopSection = (props) => {
-  const {keyword} = props;
+  const {keyword, pagenumber} = props;
   const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList)
-  const {loading, error, products} = productList;
+  const productList = useSelector((state) => state.productList);
+  const {loading, error, products, page, pages} = productList;
 
   useEffect(() => {
-   dispatch(listProduct(keyword));
-  }, [dispatch, keyword]);
+   dispatch(listProduct(keyword,pagenumber));
+  }, [dispatch, keyword, pagenumber]);
 
   return (
     <>
@@ -25,16 +25,14 @@ const ShopSection = (props) => {
           <div className="row">
             <div className="col-lg-12 col-md-12 article">
               <div className="shopcontainer row">
-                {
-                  loading ? (
+                {loading ? (
                   <div className="mb-5">
                      <Loading />
                   </div>
                   
                    ) : error ? (
-                   <Message variant="alert-danger">{error}</Message>)
-                  :
-                  (
+                   <Message variant="alert-danger">{error}</Message>
+                   ) : (
                     <>
                       {products.map((product) => (
                   <div
@@ -70,7 +68,11 @@ const ShopSection = (props) => {
                 }
               
                 {/* Pagination */}
-                <Pagination />
+                <Pagination 
+                pages={pages}
+                page={page}
+                keyword={keyword ? keyword : ""} 
+                />
               </div>
             </div>
           </div>
