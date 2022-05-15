@@ -49,10 +49,7 @@ export const productDetailsReducer = (
 
 
   //crear opinion de producto
-export const productCreateReviewReducer = (
-  state = { },
-  action
-) => {
+export const productCreateReviewReducer = (state = {}, action) => {
   switch (action.type) {
     case PRODUCT_CREATE_REVIEW_REQUEST:
       return {loading: true };
@@ -61,7 +58,7 @@ export const productCreateReviewReducer = (
     case PRODUCT_CREATE_REVIEW_FAIL:
       return { loading: false, error: action.payload };
     case PRODUCT_CREATE_REVIEW_RESET:
-      return { };
+      return {};
     default:
       return state;
   }
