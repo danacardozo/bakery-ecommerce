@@ -3,7 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 const MainCarousel = () => {
   return (
-    <Carousel>
+    <Carousel className="row">
   <Carousel.Item>
     <img
       className="carousel img-fluid w-100"

@@ -7,7 +7,8 @@ body {
   font-size: 17px;
   padding: 0;
   box-sizing: border-box;
-  background-color: #fbf0e3
+  background-color: #fbf0e3;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -124,6 +125,8 @@ textarea:focus {
 .carousel{
   padding-top: 30px;
   padding-bottom: 50px;
+  padding-left: 0%;
+  padding-right: 0%;
   height: 100%;
 }
 .carousel .carousel-indicators{
