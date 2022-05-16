@@ -10,7 +10,7 @@ const CalltoActionSection = () => {
               <h2>Do you want work with us?</h2>
               <p>Leave your resume here</p>
               <form className="form-section">
-                <input placeholder="Your Resume/CV..." accept="image/*,.pdf" name="email" type="file" />
+                <input placeholder="Your Resume/CV..." accept="image/*,.pdf" name="resume" type="file" />
                 <input  value="Submit" name="subscribe" type="submit" />
               </form>
             </div>

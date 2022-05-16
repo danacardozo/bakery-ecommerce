@@ -1,4 +1,5 @@
 @media (max-width: 991.98px) {
+  
   .display-none {
     display: none !important;
   }
@@ -48,6 +49,9 @@
   }
 }
 @media (max-width: 768px) {
+  .carousel{
+    height: 30rem;
+  }
   .pc-header {
     display: none !important;
   }
@@ -115,6 +119,9 @@
   }
 }
 @media (max-width: 575.98px) {
+  .carousel{
+    height: 20rem;
+  }
   .subscribe-head .form-section input[type="email"] {
     width: 100%;
   }

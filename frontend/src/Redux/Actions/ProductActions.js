@@ -1,6 +1,5 @@
 import { PRODUCT_CREATE_REVIEW_FAIL, 
     PRODUCT_CREATE_REVIEW_REQUEST,
-     PRODUCT_CREATE_REVIEW_RESET, 
      PRODUCT_CREATE_REVIEW_SUCCESS,
       PRODUCT_DETAILS_FAIL, 
     PRODUCT_DETAILS_REQUEST, 
@@ -19,7 +18,7 @@ export const listProduct =
 async(dispatch) => {
     try {
         dispatch({type: PRODUCT_LIST_REQUEST });
-        const {data} = await axios.get(`api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
+        const {data} = await axios.get(`/api/products?keyword=${keyword}&pageNumber=${pageNumber}`);
         dispatch({type: PRODUCT_LIST_SUCCESS, payload:data});
     } catch (error) {
         dispatch({
